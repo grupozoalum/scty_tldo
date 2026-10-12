@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0f1c">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Caseta">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Caseta de Seguridad · Fraccionamiento</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="seguridad.css">
+</head>
+<body>
+
+  <!-- ============ ICONOS ============ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h2M20 14v2"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></symbol>
+    <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4" r="2"/><path d="M10 22l2-7 3 3v6M8 12l2-4 4 1 3 4M8 12l-2 4"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 17h14M3 13l2-6h14l2 6v5H3z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></symbol>
+    <symbol id="i-exit" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></symbol>
+    <symbol id="i-wifi-off" viewBox="0 0 24 24"><line x1="1" y1="1" x2="23" y2="23"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55M5 12.55a10.94 10.94 0 0 1 5.17-2.39M10.71 5.05A16 16 0 0 1 22.58 9M1.42 9a15.91 15.91 0 0 1 4.7-2.88M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></symbol>
+    <symbol id="i-keyboard" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M6 13h.01M18 13h.01M8 16h8"/></symbol>
+  </svg>
+
+  <!-- ============ CARGA ============ -->
+  <div class="boot" id="boot"><div class="spinner"></div><p>Iniciando caseta…</p></div>
+
+  <!-- ============ LOGIN ============ -->
+  <section class="login" id="login" hidden aria-labelledby="login-title">
+    <form class="login__card" id="form-login" novalidate>
+      <span class="login__logo"><svg class="icon"><use href="#i-shield"/></svg></span>
+      <h1 class="login__title" id="login-title">Caseta de Seguridad</h1>
+      <p class="login__sub">Ingresa con tu cuenta de guardia</p>
+      <label class="field">
+        <span class="field__label">Correo</span>
+        <input type="email" id="login-email" required autocomplete="username" inputmode="email">
+      </label>
+      <label class="field">
+        <span class="field__label">Contraseña</span>
+        <input type="password" id="login-pass" required autocomplete="current-password">
+      </label>
+      <p class="form-error" id="login-error" role="alert"></p>
+      <button type="submit" class="btn btn--primary btn--xl btn--block" id="btn-login">Entrar</button>
+    </form>
+  </section>
+
+  <!-- ============ APP ============ -->
+  <div class="app" id="app" hidden>
+
+    <header class="top">
+      <div class="top__brand">
+        <span class="top__logo"><svg class="icon"><use href="#i-shield"/></svg></span>
+        <div class="top__info">
+          <p class="top__title" id="caseta-nombre">Caseta</p>
+          <button type="button" class="top__guard" id="btn-guardia" aria-label="Cambiar nombre del guardia">
+            <svg class="icon"><use href="#i-user"/></svg><span id="guardia-nombre">—</span><svg class="icon icon--sm"><use href="#i-edit"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="top__right">
+        <div class="clock">
+          <span class="clock__time" id="reloj">--:--</span>
+          <span class="clock__date" id="fecha-hoy"></span>
+        </div>
+        <span class="conn" id="conn" title="Conexión"><span class="conn__dot"></span><span class="conn__txt">En línea</span></span>
+        <button type="button" class="icon-btn" id="btn-salir" aria-label="Cerrar sesión"><svg class="icon"><use href="#i-logout"/></svg></button>
+      </div>
+    </header>
+
+    <main class="main" id="main">
+
+      <!-- ===================== VALIDAR ===================== -->
+      <section class="view" id="view-validar" aria-labelledby="t-validar">
+        <h1 class="view-title" id="t-validar">Validar acceso</h1>
+
+        <div class="layout">
+          <form class="panel" id="form-buscar" novalidate autocomplete="off">
+            <label class="big-label" for="codigo">Código o ID del pase QR</label>
+            <div class="scan-row">
+              <input type="text" id="codigo" class="code-input" autocomplete="off" autocapitalize="characters"
+                     autocorrect="off" spellcheck="false" enterkeyhint="search" maxlength="200"
+                     placeholder="Escanea o escribe" aria-describedby="tip-codigo">
+              <button type="submit" class="btn btn--primary btn--xl" id="btn-validar">
+                <svg class="icon"><use href="#i-search"/></svg><span>Validar</span>
+              </button>
+            </div>
+            <p class="tip" id="tip-codigo"><svg class="icon"><use href="#i-keyboard"/></svg>Con lector de códigos: deja el cursor aquí y escanea. Se valida automáticamente.</p>
+            <div class="btn-grid">
+              <button type="button" class="btn btn--secondary btn--lg" id="btn-camara">
+                <svg class="icon"><use href="#i-camera"/></svg><span>Escanear con cámara</span>
+              </button>
+              <button type="button" class="btn btn--secondary btn--lg" id="btn-manual">
+                <svg class="icon"><use href="#i-user"/></svg><span>Visita sin QR</span>
+              </button>
+            </div>
+          </form>
+
+          <div id="resultado" class="result-slot" aria-live="assertive">
+            <div class="placeholder">
+              <svg class="icon"><use href="#i-qr"/></svg>
+              <p>Esperando código…</p>
+              <small>El resultado de la validación aparecerá aquí.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Registro de acceso + evidencia fotográfica -->
+        <form class="panel" id="form-acceso" hidden novalidate>
+          <h2 class="panel__title">Registro de acceso y evidencia</h2>
+
+          <div class="field">
+            <span class="field__label">Fotografías de evidencia (opcional, hasta 3)</span>
+            <div class="slots" data-grupo="acceso"></div>
+          </div>
+
+          <div class="grid-2">
+            <label class="field">
+              <span class="field__label">Placas del vehículo</span>
+              <input type="text" name="placas" maxlength="12" autocapitalize="characters" placeholder="Sin vehículo">
+            </label>
+            <label class="field">
+              <span class="field__label">Número de acompañantes</span>
+              <input type="number" name="acompanantes" min="0" max="50" inputmode="numeric" value="0">
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">Observaciones</span>
+            <textarea name="observaciones" rows="2" maxlength="300" placeholder="Ej. Trae herramienta, viene en taxi…"></textarea>
+          </label>
+
+          <label class="check" id="row-confirmo" hidden>
+            <input type="checkbox" name="confirmo">
+            <span>Confirmé por teléfono o interfón con el residente que autoriza la entrada</span>
+          </label>
+
+          <p class="form-error" id="acceso-error" role="alert"></p>
+          <div class="btn-grid">
+            <button type="button" class="btn btn--ghost btn--lg" id="btn-nueva">
+              <svg class="icon"><use href="#i-x"/></svg><span>Nueva búsqueda</span>
+            </button>
+            <button type="submit" class="btn btn--success btn--xl" id="btn-registrar">
+              <svg class="icon"><use href="#i-check"/></svg><span id="btn-registrar-txt">Registrar entrada</span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ===================== ACCESOS DE HOY ===================== -->
+      <section class="view" id="view-accesos" hidden aria-labelledby="t-accesos">
+        <h1 class="view-title" id="t-accesos">Accesos de hoy</h1>
+        <div class="counters">
+          <div class="counter"><span class="counter__num" id="cnt-total">0</span><span class="counter__lbl">Registros</span></div>
+          <div class="counter counter--ok"><span class="counter__num" id="cnt-dentro">0</span><span class="counter__lbl">Dentro ahora</span></div>
+          <div class="counter counter--bad"><span class="counter__num" id="cnt-denegados">0</span><span class="counter__lbl">Denegados</span></div>
+        </div>
+        <label class="search">
+          <svg class="icon"><use href="#i-search"/></svg>
+          <input type="search" id="buscar-accesos" placeholder="Buscar visita, casa o placas" aria-label="Buscar accesos">
+        </label>
+        <ul class="list" id="lista-accesos"><li class="loading">Cargando…</li></ul>
+      </section>
+
+      <!-- ===================== RONDÍN / INCIDENCIAS ===================== -->
+      <section class="view" id="view-rondin" hidden aria-labelledby="t-rondin">
+        <h1 class="view-title" id="t-rondin">Rondines e incidencias</h1>
+
+        <div class="big-actions">
+          <button type="button" class="action action--ok" id="btn-sin-novedad">
+            <svg class="icon"><use href="#i-check"/></svg>
+            <span class="action__title">Rondín sin novedad</span>
+            <span class="action__sub">Registrar punto recorrido</span>
+          </button>
+          <button type="button" class="action action--danger" data-abrir-incidencia>
+            <svg class="icon"><use href="#i-alert"/></svg>
+            <span class="action__title">Reportar incidencia</span>
+            <span class="action__sub">Con notas y fotografía</span>
+          </button>
+        </div>
+
+        <form class="panel panel--danger" id="form-incidencia" hidden novalidate>
+          <div class="panel__head">
+            <h2 class="panel__title">Nueva incidencia de rondín</h2>
+            <button type="button" class="icon-btn" id="cerrar-incidencia" aria-label="Cerrar formulario"><svg class="icon"><use href="#i-x"/></svg></button>
+          </div>
+
+          <fieldset class="choices">
+            <legend class="field__label">Tipo de incidencia *</legend>
+            <label class="choice"><input type="radio" name="tipo" value="Persona sospechosa" required><span>Persona sospechosa</span></label>
+            <label class="choice"><input type="radio" name="tipo" value="Vehículo sospechoso"><span>Vehículo sospechoso</span></label>
+            <label class="choice"><input type="radio" name="tipo" value="Daño a propiedad"><span>Daño a propiedad</span></label>
+            <label class="choice"><input type="radio" name="tipo" value="Falla de luminaria"><span>Falla de luminaria</span></label>
+            <label class="choice"><input type="radio" name="tipo" value="Puerta o acceso abierto"><span>Acceso abierto</span></label>
+            <label class="choice"><input type="radio" name="tipo" value="Ruido / riña"><span>Ruido / riña</span></label>
+            <label class="choice"><input type="radio" name="tipo" value="Fuga de agua"><span>Fuga de agua</span></label>
+            <label class="choice"><input type="radio" name="tipo" value="Otro"><span>Otro</span></label>
+          </fieldset>
+
+          <div class="grid-2">
+            <label class="field">
+              <span class="field__label">Punto del rondín *</span>
+              <select name="punto" required></select>
+            </label>
+            <label class="field">
+              <span class="field__label">Detalle de ubicación</span>
+              <input type="text" name="detalleUbicacion" maxlength="100" placeholder="Ej. Frente a casa 18">
+            </label>
+          </div>
+
+          <fieldset class="choices choices--3">
+            <legend class="field__label">Prioridad</legend>
+            <label class="choice choice--low"><input type="radio" name="prioridad" value="baja"><span>Baja</span></label>
+            <label class="choice choice--mid"><input type="radio" name="prioridad" value="media" checked><span>Media</span></label>
+            <label class="choice choice--high"><input type="radio" name="prioridad" value="alta"><span>Alta / urgente</span></label>
+          </fieldset>
+
+          <label class="field">
+            <span class="field__label">Notas del guardia *</span>
+            <textarea name="notas" rows="4" required minlength="10" maxlength="1000" placeholder="¿Qué observaste? ¿Qué acciones tomaste?"></textarea>
+          </label>
+
+          <div class="field">
+            <span class="field__label">Fotografías de evidencia (hasta 3)</span>
+            <div class="slots" data-grupo="incidencia"></div>
+          </div>
+
+          <label class="check">
+            <input type="checkbox" name="gps" checked>
+            <span>Adjuntar mi ubicación GPS</span>
+          </label>
+
+          <p class="form-error" id="incidencia-error" role="alert"></p>
+          <button type="submit" class="btn btn--danger btn--xl btn--block" id="btn-enviar-incidencia">
+            <svg class="icon"><use href="#i-alert"/></svg><span>Enviar reporte a administración</span>
+          </button>
+        </form>
+
+        <h2 class="section-title">Bitácora de hoy</h2>
+        <ul class="list" id="lista-bitacora"><li class="loading">Cargando…</li></ul>
+      </section>
+    </main>
+
+    <!-- Botón rápido de incidencia (visible en todas las pantallas) -->
+    <button type="button" class="fab-alert" data-abrir-incidencia aria-label="Reportar incidencia durante rondín">
+      <svg class="icon"><use href="#i-alert"/></svg><span>Incidencia</span>
+    </button>
+
+    <!-- Navegación inferior -->
+    <nav class="tabbar" aria-label="Secciones">
+      <button type="button" class="tab is-active" data-view="validar">
+        <svg class="icon"><use href="#i-qr"/></svg><span>Validar</span>
+      </button>
+      <button type="button" class="tab" data-view="accesos">
+        <svg class="icon"><use href="#i-list"/></svg><span>Accesos</span>
+        <span class="tab__badge" id="badge-dentro" hidden>0</span>
+      </button>
+      <button type="button" class="tab" data-view="rondin">
+        <svg class="icon"><use href="#i-walk"/></svg><span>Rondín</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- ============ ESCÁNER DE CÁMARA ============ -->
+  <div class="scanner" id="scanner" hidden role="dialog" aria-modal="true" aria-label="Escáner de código QR">
+    <video id="scanner-video" playsinline muted></video>
+    <div class="scanner__frame" aria-hidden="true"></div>
+    <p class="scanner__msg" id="scanner-msg">Apunta la cámara al código QR</p>
+    <button type="button" class="btn btn--light btn--xl scanner__close" id="scanner-cerrar">
+      <svg class="icon"><use href="#i-x"/></svg><span>Cancelar</span>
+    </button>
+  </div>
+
+  <!-- ============ PROGRESO DE SUBIDA ============ -->
+  <div class="overlay" id="progreso" hidden role="status" aria-live="polite">
+    <div class="overlay__card">
+      <div class="spinner"></div>
+      <p class="overlay__title" id="progreso-titulo">Subiendo evidencia…</p>
+      <div class="bar"><span id="progreso-barra"></span></div>
+      <p class="overlay__sub" id="progreso-detalle">0%</p>
+    </div>
+  </div>
+
+  <!-- ============ MODAL ============ -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__backdrop" data-cerrar-modal></div>
+    <form class="modal__panel" id="modal-form" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <div class="modal__head">
+        <h2 class="modal__title" id="modal-titulo">Título</h2>
+        <button type="button" class="icon-btn" data-cerrar-modal aria-label="Cerrar"><svg class="icon"><use href="#i-x"/></svg></button>
+      </div>
+      <div class="modal__body" id="modal-body"></div>
+      <div class="modal__foot">
+        <button type="button" class="btn btn--ghost btn--lg" data-cerrar-modal id="modal-cancelar">Cancelar</button>
+        <button type="submit" class="btn btn--primary btn--lg" id="modal-ok">Aceptar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script type="module" src="seguridad.js"></script>
+</body>
+</html>
